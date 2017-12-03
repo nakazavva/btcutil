@@ -11,10 +11,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/btcsuite/btcd/btcec"
-	"github.com/btcsuite/btcd/chaincfg"
-	"github.com/btcsuite/btcutil/base58"
-	"github.com/btcsuite/btcutil/bech32"
+	"github.com/nakazavva/xvgd/btcec"
+	"github.com/nakazavva/xvgd/chaincfg"
+	"github.com/nakazavva/xvgutil/base58"
+	"github.com/nakazavva/xvgutil/bech32"
 	"golang.org/x/crypto/ripemd160"
 )
 
@@ -200,7 +200,6 @@ func DecodeAddress(addr string, defaultNet *chaincfg.Params) (Address, error) {
 		default:
 			return nil, ErrUnknownAddressType
 		}
-
 	default:
 		return nil, errors.New("decoded address is of unknown size")
 	}
